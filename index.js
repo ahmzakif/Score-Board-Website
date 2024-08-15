@@ -8,6 +8,17 @@ let scores = {
 let timerInterval;
 let startTime;
 let elapsedTime = 0;
+let countdownTime = 0;
+let mode = 'stopwatch';
+
+function setMode(selectedMode) {
+    mode = selectedMode;
+    if (mode === 'timer') {
+        document.getElementById('timer-input-container').style.display = 'block';
+    } else {
+        document.getElementById('timer-input-container').style.display = 'none';
+    }
+}
 
 function updateScore(player) {
     document.getElementById(`${player}-score`).textContent = scores[player];
@@ -33,11 +44,26 @@ function reset() {
 
 function startTimer() {
     if (!timerInterval) {
-        startTime = Date.now() - elapsedTime;
-        timerInterval = setInterval(() => {
-            elapsedTime = Date.now() - startTime;
-            document.getElementById('timer-display').textContent = formatTime(elapsedTime);
-        }, 10); // Update every 10 milliseconds
+        if (mode === 'timer') {
+            const minutes = parseInt(document.getElementById('minutes').value, 10);
+            const seconds = parseInt(document.getElementById('seconds').value, 10);
+            countdownTime = (minutes * 60 + seconds) * 1000; // Convert to milliseconds
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                elapsedTime = countdownTime - (Date.now() - startTime);
+                if (elapsedTime <= 0) {
+                    pauseTimer();
+                    elapsedTime = 0;
+                }
+                document.getElementById('timer-display').textContent = formatTime(elapsedTime);
+            }, 10);
+        } else {
+            startTime = Date.now() - elapsedTime;
+            timerInterval = setInterval(() => {
+                elapsedTime = Date.now() - startTime;
+                document.getElementById('timer-display').textContent = formatTime(elapsedTime);
+            }, 10);
+        }
     }
 }
 
