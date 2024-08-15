@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="timer-container">
+            <div id="timer-display">00:00:00</div>
+            <div class="timer-controls">
+                <button class="timer-btn" onclick="startTimer()">Play</button>
+                <button class="timer-btn" onclick="pauseTimer()">Pause</button>
+                <button class="timer-btn" onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div>
+                <h3>SDN 1 TANGGUNG</h3>
+                <div class="score-background">
+                    <p id="player1-score">0</p>
+                </div>
+                <div class="adds">
+                    <button class="add" onclick="add1('player1')">+1</button>
+                    <button class="add" onclick="subtract1('player1')">-1</button>
+                </div>
+            </div>
+            <div>
+                <h3>SDN 2 TANGGUNG</h3>
+                <div class="score-background">
+                    <p id="player2-score">0</p>
+                </div>
+                <div class="adds">
+                    <button class="add" onclick="add1('player2')">+1</button>
+                    <button class="add" onclick="subtract1('player2')">-1</button>
+                </div>
+            </div>
+            <div>
+                <h3>SDN 3 TANGGUNG</h3>
+                <div class="score-background">
+                    <p id="player3-score">0</p>
+                </div>
+                <div class="adds">
+                    <button class="add" onclick="add1('player3')">+1</button>
+                    <button class="add" onclick="subtract1('player3')">-1</button>
+                </div>
+            </div>
+            <div>
+                <h3>SDN 4 TANGGUNG</h3>
+                <div class="score-background">
+                    <p id="player4-score">0</p>
+                </div>
+                <div class="adds">
+                    <button class="add" onclick="add1('player4')">+1</button>
+                    <button class="add" onclick="subtract1('player4')">-1</button>
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <button class="resetbtn" onclick="reset()">Restart</button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
