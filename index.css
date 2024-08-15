@@ -1,9 +1,75 @@
 body {
     background-color: #191970; /* Dark Midnight Blue */
-    margin: auto;
+    margin: 0;
     font-family: Arial, sans-serif;
     color: #FFFFFF; /* White */
 }
+
+.mode-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mode-container label {
+    font-size: 1.2em;
+    margin: 0 15px;
+    cursor: pointer;
+    color: white;
+}
+
+.mode-container input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #F94F6D; /* Color for radio button */
+}
+
+#timer-input-container {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#timer-input-container label {
+    margin: 0 10px;
+    font-size: 1.2em;
+    color: white;
+}
+
+#timer-input-container input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    margin: 0 5px;
+    background-color: #121c3b;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+#timer-input-container input[type="number"]::-webkit-inner-spin-button,
+#timer-input-container input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .mode-container {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    #timer-input-container label,
+    #timer-input-container input[type="number"] {
+        font-size: 1em;
+    }
+
+    #timer-input-container input[type="number"] {
+        width: 50px;
+        padding: 6px;
+    }
+}
+
 
 .timer-container {
     text-align: center;
@@ -13,6 +79,10 @@ body {
 #timer-display {
     font-size: 2.5em;
     margin-bottom: 10px;
+    padding: 10px;
+    background-color: #121c3b; /* Slightly darker for contrast */
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
 }
 
 .timer-controls {
@@ -28,12 +98,13 @@ body {
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 3px 3px 5px #000; /* Efek timbul */
-    transition: transform 0.1s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+    transition: transform 0.1s, box-shadow 0.2s;
 }
 
 .timer-btn:hover {
     transform: translateY(-2px); /* Animasi timbul saat hover */
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.7); /* Highlight shadow on hover */
 }
 
 .container {
@@ -58,6 +129,7 @@ body {
 
 h3 {
     margin: 10px 0;
+    font-size: 1.5em;
 }
 
 p {
@@ -77,12 +149,13 @@ p {
     width: 40px;
     margin: 5px;
     cursor: pointer;
-    box-shadow: 3px 3px 5px #000; /* Efek timbul */
-    transition: transform 0.1s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+    transition: transform 0.1s, box-shadow 0.2s;
 }
 
 .add:hover {
     transform: translateY(-2px); /* Animasi timbul saat hover */
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.7); /* Highlight shadow on hover */
 }
 
 .adds {
@@ -102,12 +175,13 @@ p {
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 3px 3px 5px #000; /* Efek timbul */
-    transition: transform 0.1s;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+    transition: transform 0.1s, box-shadow 0.2s;
 }
 
 .resetbtn:hover {
     transform: translateY(-2px); /* Animasi timbul saat hover */
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.7); /* Highlight shadow on hover */
 }
 
 @media (max-width: 768px) {
