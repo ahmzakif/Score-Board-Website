@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
         <div class="mode-container">
             <label><input type="radio" name="mode" value="stopwatch" checked onclick="setMode('stopwatch')"> Stopwatch</label>
             <label><input type="radio" name="mode" value="timer" onclick="setMode('timer')"> Timer</label>
@@ -15,7 +14,7 @@
             <label for="minutes">Minutes: </label><input type="number" id="minutes" min="0" value="0">
             <label for="seconds">Seconds: </label><input type="number" id="seconds" min="0" max="59" value="0">
         </div>
-        
+
         <div class="timer-container">
             <div id="timer-display">00:00:00</div>
             <div class="timer-controls">
@@ -70,6 +69,10 @@
         <div class="reset">
             <button class="resetbtn" onclick="reset()">Restart</button>
         </div>
+
+        <!-- Audio for Alarm -->
+        <audio id="alarm-sound" src="sound.mp3"></audio>
+
         <script src="index.js"></script>
     </body>
 </html>

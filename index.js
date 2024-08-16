@@ -54,6 +54,7 @@ function startTimer() {
                 if (elapsedTime <= 0) {
                     pauseTimer();
                     elapsedTime = 0;
+                    playAlarm();  // Play alarm when time is up
                 }
                 document.getElementById('timer-display').textContent = formatTime(elapsedTime);
             }, 10);
@@ -65,6 +66,11 @@ function startTimer() {
             }, 10);
         }
     }
+}
+
+function playAlarm() {
+    let alarmSound = document.getElementById('alarm-sound');
+    alarmSound.play();
 }
 
 function pauseTimer() {
