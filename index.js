@@ -25,12 +25,12 @@ function updateScore(player) {
 }
 
 function add1(player) {
-    scores[player] += 1;
+    scores[player] += 10;
     updateScore(player);
 }
 
 function subtract1(player) {
-    scores[player] -= 1;
+    scores[player] -= 10;
     updateScore(player);
 }
 
